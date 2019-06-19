@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "export PORT=8080 && babel-node app.js",
-    "start:dev": "export PORT=3000 NEW_RELIC_ENABLED=false && nodemon app.js --inspect --exec babel-node --",
-    "test": "export BAPI_LIMO_INTERNAL_URL= && nyc --reporter=lcov --reporter=text --report-dir coverage mocha './{,!(node_modules)/**}/*.spec.js' --require babel-register"
+    "start:dev": "export PORT=3000 && nodemon app.js --inspect --exec babel-node --",
+    "test": "nyc --reporter=lcov --reporter=text --report-dir coverage mocha './{,!(node_modules)/**}/*.spec.js' --require babel-register"
   },
   "author": "",
   "license": "ISC",
