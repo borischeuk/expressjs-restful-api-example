@@ -1,0 +1,38 @@
+{
+  "name": "babel_starter",
+  "version": "0.0.1",
+  "description": "ExpressJS RESTful API Example",
+  "main": "app.js",
+  "scripts": {
+    "start": "export PORT=8080 && babel-node app.js",
+    "start:dev": "export PORT=3000 NEW_RELIC_ENABLED=false && nodemon app.js --inspect --exec babel-node --",
+    "test": "export BAPI_LIMO_INTERNAL_URL= && nyc --reporter=lcov --reporter=text --report-dir coverage mocha './{,!(node_modules)/**}/*.spec.js' --require babel-register"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@godaddy/terminus": "^4.1.2",
+    "aws-sdk": "^2.468.0",
+    "axios": "^0.18.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "body-parser": "^1.19.0",
+    "continuation-local-storage": "^3.2.1",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "node-uuid": "^1.4.8",
+    "properties-reader": "0.0.16"
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^1.16.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "nodemon": "^1.19.0",
+    "nyc": "^14.1.1",
+    "sinon": "^7.3.2"
+  }
+}
